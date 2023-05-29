@@ -1,0 +1,37 @@
+## Standardized model for input/output file operations
+## The structure might be copied but should not be changed
+
+general: # Do not remove this. You can modify the rest
+  base_location: "." # Base folder for exporting results
+  base_folder_name: "test1"
+  folders: ['raw', 'processed', 'figures']
+  overwrite: False # If set True, it will overwrite the folders given in base folder (delete and re-create)
+  verbose_keys: False
+
+experiment: # Changeable name for your test
+  label: "Example label" # An example label to give a name for your test
+  material: "None" # A label for not to forget material
+  description: "Example description" # You can give a description
+
+  resources:  # It's mandatory, and can't be deleted
+    mechanical: # It's required to process your mechanical tests. If non-given, the post-processing can't be performed
+      data_location: None # Necessary variable that has to be put
+      properties: # Necessary sub-variable if mechanical and video wanted to be synced automatically
+        timeout: 1 # in seconds
+        sampling_delay: 500 # in miliseconds
+        volt_to_load: 1 # in Kg/V
+        load_voltage: 1 # in Volt
+
+    recorded_video: # Required for recorded video operations. If not found, video operations can't be handled
+      data_location: None # Required variable
+        
+    processed_video:
+      data_location: None
+      properties:
+        fps: None # no units
+        duration: None # in seconds
+        file_size: None # in Mb
+
+    output_locations:
+      processed_video: None
+      figures: None
