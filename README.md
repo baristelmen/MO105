@@ -71,7 +71,7 @@ However, controlling of the piston movement is performed using a voltage regulat
 
 ## Scripts available for this course
 
-Before starting, these two programs requires specific Python libraries to be installed on your computer. There are several ways to install Python and it's libraries on your system. In this project, we would like to use **conda** for generalization for everybody and easy maintance. 
+Before starting, to control the machine and performe video operations, requires specific Python libraries to be installed on your computer. There are several ways to install Python and it's libraries on your system. In this project, we would like to use **conda** for generalization for everybody and easy maintance. 
 
 Conda is an open-source package management and environment management system for Python and other programming languages. It was developed by Anaconda, a Python distribution focused on scientific computing and data science. Conda provides a powerful and flexible way to create, manage, and share software environments and packages. Here are some key features and concepts associated with 
 
