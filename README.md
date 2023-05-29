@@ -55,7 +55,7 @@ Tensile testing has a variety of uses, including:
 * Comparing technical data for different material options
 * Material testing to provide evidence for use in legal proceedings
 
-## Machine's available for this course
+## Machines available for this course
 
 For this course, a custom made tensile testing machines will be available. These machines are equipped with
 
@@ -68,6 +68,8 @@ For this course, a custom made tensile testing machines will be available. These
 To control the machine and get the responses from the load cell, dedicated graphical user interface is created which is located under 'control_machine' folder. The controlling program is written under Python language to facilitate it's usage and easy modifications.
 
 However, controlling of the piston movement is performed using a voltage regulator and **displacement values are not recorded**. For this purpose, a video recorder is required to survey the entire test. **For instance, you can use your phones to record the entire survey.** To get displacement values or calculating the strain values, you will require another script which is located under 'point_tracking' folder. This program is also written under Python programming language to facilitate it's usage.
+
+## Scripts available for this course
 
 Before starting, these two programs requires specific Python libraries to be installed on your computer. There are several ways to install Python and it's libraries on your system. In this project, we would like to use **conda** for generalization for everybody and easy maintance. 
 
