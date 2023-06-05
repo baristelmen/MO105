@@ -1,5 +1,129 @@
-# TP-Traction-2023
-This repo contains necessary scripts to assist you through your practical course. The main purpose of this course is to get familiar and analyze characteristics of tensile test. 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Tensile test practical work (TP)</h3>
+
+  <p align="center">
+    Python scripts for controlling the machine and post-treatment of video data
+    <br />
+    <a href="https://github.com/baristelmen/TP-Traction-2023/archive/refs/heads/main.zip">Download</a>
+    ·
+    <a href="https://github.com/baristelmen/TP-Traction-2023/tree/main/examples">View Demo</a>
+    ·
+    <a href="https://github.com/baristelmen/TP-Traction-2023/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/baristelmen/TP-Traction-2023/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+# About this repository
+This repo contains python scripts to assist you through your practical course. Currently, two main scripts are available.
+
+| Name            | Definition                                                                                                                                                                                   |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| control_machine | This script will be used to control machine's cross-head displacement during tensile testing. It's a graphical user interface to control the machine using an Arduino based micro-controller |
+| point_tracking  | This script can be used for post-treatment of recorded video during the tensile testing to obtain deformation on given points.                                                               |
+
+As it's current state, it has been tested under Windows and Linux. **On MacOS, the GUI known to be buggy.**
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+The scripts for controlling the machine and post-treatment of video files requires a valid python installation and availability of python libraries. To facilitate the installation process and unifying the functionality, it's recommended to use **conda**.
+
+Conda is an open source package management system and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs and updates packages and their dependencies. If you need a package that requires a different version of Python, you do not need to switch to a different environment manager, because conda is also an environment manager.
+
+Conda is widely used in the scientific computing and data science communities due to its extensive package availability, environment management capabilities, and robust dependency resolution. It simplifies the process of setting up and managing software environments, making it easier to work on Python projects with different dependencies and configurations.
+
+Anaconda contains huge pack of default libraries which we don't require at the moment. Therefore, we will install **miniconda** instead. Miniconda is a lightweight installer for Conda that includes only the essential components needed to run Conda. It provides a smaller footprint compared to the full Anaconda distribution, making it faster to download and install. Miniconda allows you to create and manage Python environments and install packages using the Conda package manager.
+
+With Miniconda, you have the flexibility to set up custom Python environments tailored to your specific project requirements. You can create isolated environments with different versions of Python and install packages using Conda or pip, depending on your preference.
+
+Miniconda provides the core functionality of Conda, including package management, dependency resolution, and environment management. It's a popular choice for those who prefer a lightweight installation and want more control over the packages and dependencies in their Python environments.
+
+### Prerequisites
+
+**Before going any further, please follow the instructions below to install and configure your environment**
+
+To obtain miniconda, follow the instructions below;
+
+1. Visit the Miniconda website at [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html).
+2. Download the installer appropriate for your operating system.
+3. Run the installer and follow the prompts to complete the installation.
+
+**For Windows 10/11**
+It's recommended to use `Anaconda Powershell Prompt` or `Anaconda Prompt` to access `conda` functions. By default, if it's not added on the PATH, the system can't recognize the where to find `conda`. 
+
+To verify the installation is passed correctly, open `Anaconda Powershell Prompt` or `Anaconda Prompt` run the following command:
+
+`conda --version`
+
+If the installation was successful, you should see the version of Conda installed on your system. 
+
+Inside the repository, there is a file which is called `traction.yaml`. This file contains all the necessary libraries that is required to run scripts for both `control_machine` and `point_tracking`. Therefore, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following code for automatic installation of packages.
+
+`conda env create --file traction.yml`
+
+By default, this file will create an environment which is called `traction-tp`. To run these scripts, these environment has to be activated. To do that, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following 
+
+`conda activate traction-tp`
+
+In case if you encounter any error, follow the `Manual installation instructions`
+
+**For Linux (Ubuntu, Arch, Fedora, Centos etc.)**
+Once the miniconda is installed, if it's added to the path, it's automatically activated. Therefore, open a terminal and verify the accessibility and installation using;
+
+`conda --version`
+
+If the installation was successful, you should see the version of Conda installed on your system. 
+
+Inside the repository, there is a file which is called `traction.yaml`. This file contains all the necessary libraries that is required to run scripts for both `control_machine` and `point_tracking`. Therefore, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following code for automatic installation of packages.
+
+`conda env create --file traction.yml`
+
+By default, this file will create an environment which is called `traction-tp`. To run these scripts, these environment has to be activated. To do that, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following 
+
+`conda activate traction-tp`
+
+In case if you encounter any error, follow the `Manual installation instructions`
+
+**For MacOS (Including Intel and ARM based chips)**
+
+For MacOS, Once the miniconda is installed, if it's added to the path, it's automatically activated. Therefore, open a terminal and verify the accessibility and installation using;
+
+`conda --version`
+
+If the installation was successful, you should see the version of Conda installed on your system. Unfortunately, the automatic installation through `traction.yaml` file is known to be not working. Therefore, follow the manual installation below.
+
+**Manual installation instructions**
+
+At some point, some configurations might require elevated prompt or some other interventions. Therefore, it's necessary to install everything from scratch manually. For each system (Windows, Linux or MacOS), open the terminal which has an access to `conda` and type the following;
+
+* conda create -n traction-tp
+* conda activate traction-tp
+* conda install -c conda-forge pyserial opencv matplotlib pandas numpy scipy
+
+These packages should be sufficient to run the programs. 
+
+<!-- USAGE EXAMPLES -->
+## Usage
+To use the programs, inside the activated environment of conda type the following:
+
+| Name            | Definition                                                                                                                                                                                   |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| control_machine | python combine_frames.py |
+| point_tracking  | python Tracking_Video_ZNCC.py                                                               |
+
+---
+
+
 
 ## Quick introduction to tensile testing
 Tensile Testing is a form of tension testing and is a destructive engineering and materials science test whereby controlled tension is applied to a sample until it fully fails. It is widely used for material characterization and quality control in various industries, including engineering, manufacturing, and materials science.
@@ -87,16 +211,6 @@ Conda is an open-source package management and environment management system for
 
 6. **Conda Forge**: Conda Forge is a popular community-led channel that offers additional packages not available in the default Anaconda distribution. It provides a wide variety of software packages and allows users to contribute and maintain packages.
 
-Conda is widely used in the scientific computing and data science communities due to its extensive package availability, environment management capabilities, and robust dependency resolution. It simplifies the process of setting up and managing software environments, making it easier to work on Python projects with different dependencies and configurations.
-
-Anaconda contains huge pack of default libraries which we don't require at the moment. Therefore, we will install **miniconda** instead. Miniconda is a lightweight installer for Conda that includes only the essential components needed to run Conda. It provides a smaller footprint compared to the full Anaconda distribution, making it faster to download and install. Miniconda allows you to create and manage Python environments and install packages using the Conda package manager.
-
-With Miniconda, you have the flexibility to set up custom Python environments tailored to your specific project requirements. You can create isolated environments with different versions of Python and install packages using Conda or pip, depending on your preference.
-
-Miniconda provides the core functionality of Conda, including package management, dependency resolution, and environment management. It's a popular choice for those who prefer a lightweight installation and want more control over the packages and dependencies in their Python environments.
-
-
-**Before going any further, please follow the instructions below to install and configure your environment**
 
 ## Installing and Using Miniconda
 
@@ -116,58 +230,3 @@ Before installing Miniconda, ensure that you have the following:
 
 - Operating System: Windows, macOS, or Linux
 - An active internet connection
-
-### Installation
-
-Follow the instructions below to install Miniconda:
-
-1. Visit the Miniconda website at [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html).
-2. Download the installer appropriate for your operating system.
-3. Run the installer and follow the prompts to complete the installation.
-4. Open a new terminal window or command prompt to verify the installation.
-
-To confirm that Miniconda is successfully installed, open your favorite terminal or anaconda prompt to run the following command:
-
-`conda --version`
-
-If the installation was successful, you should see the version of Conda installed on your system.
-
-### Installing Packages
-
-To install packages in your Conda environment, use the `conda install` command. Here's an example:
-
-`conda install numpy`
-
-This command will install the `numpy` package into your active environment. You can specify multiple packages separated by spaces.
-
-To install a specific version of a package, use the following format:
-
-`conda install package_name=version`
-
-For example:
-
-`conda install pandas=1.2.3`
-
-### Using a `traction.yml` File
-
-If you have a `traction.yml` file that lists the packages and versions required for your project, you can use it to install all the dependencies at once. This file is given at the root folder this repository.
-
-Follow these steps:
-
-1. Navigate to the directory where your `traction.yml` file is located.
-2. Run the following command to install the packages listed in the `traction.yml` file:
-
-`conda env create --file traction.yml.`
-
-Conda will resolve the dependencies and install the necessary packages.
-
-3. Once the installation is complete, you will have all the required packages for your project. 
-
-4. To use the provided scripts for controlling the machine and video operations, activate the environment as below:
-
-`conda activate traction-tp`
-
-5. To run the scripts following syntax will be used:
-
-`python combine_frames.py` -> for controlling the machine
-`python Tracking_Video_ZNCC.py` -> for video operations and get displacement values
