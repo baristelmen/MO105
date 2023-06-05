@@ -32,9 +32,9 @@ This repo contains python scripts to assist you through your practical course. C
 
 As it's current state, it has been tested under Windows and Linux. **On MacOS, the GUI known to be buggy.**
 
-
+---
 <!-- GETTING STARTED -->
-## Getting Started
+# Getting Started
 
 The scripts for controlling the machine and post-treatment of video files requires a valid python installation and availability of python libraries. To facilitate the installation process and unifying the functionality, it's recommended to use **conda**.
 
@@ -48,7 +48,9 @@ With Miniconda, you have the flexibility to set up custom Python environments ta
 
 Miniconda provides the core functionality of Conda, including package management, dependency resolution, and environment management. It's a popular choice for those who prefer a lightweight installation and want more control over the packages and dependencies in their Python environments.
 
-### Prerequisites
+---
+
+# Prerequisites
 
 **Before going any further, please follow the instructions below to install and configure your environment**
 
@@ -58,7 +60,7 @@ To obtain miniconda, follow the instructions below;
 2. Download the installer appropriate for your operating system.
 3. Run the installer and follow the prompts to complete the installation.
 
-**For Windows 10/11**
+### For Windows 10/11
 It's recommended to use `Anaconda Powershell Prompt` or `Anaconda Prompt` to access `conda` functions. By default, if it's not added on the PATH, the system can't recognize the where to find `conda`. 
 
 To verify the installation is passed correctly, open `Anaconda Powershell Prompt` or `Anaconda Prompt` run the following command:
@@ -77,7 +79,7 @@ By default, this file will create an environment which is called `traction-tp`. 
 
 In case if you encounter any error, follow the `Manual installation instructions`
 
-**For Linux (Ubuntu, Arch, Fedora, Centos etc.)**
+### For Linux (Ubuntu, Arch, Fedora, Centos etc.)
 Once the miniconda is installed, if it's added to the path, it's automatically activated. Therefore, open a terminal and verify the accessibility and installation using;
 
 `conda --version`
@@ -94,7 +96,7 @@ By default, this file will create an environment which is called `traction-tp`. 
 
 In case if you encounter any error, follow the `Manual installation instructions`
 
-**For MacOS (Including Intel and ARM based chips)**
+### For MacOS (Including Intel and ARM based chips)
 
 For MacOS, Once the miniconda is installed, if it's added to the path, it's automatically activated. Therefore, open a terminal and verify the accessibility and installation using;
 
@@ -102,7 +104,7 @@ For MacOS, Once the miniconda is installed, if it's added to the path, it's auto
 
 If the installation was successful, you should see the version of Conda installed on your system. Unfortunately, the automatic installation through `traction.yaml` file is known to be not working. Therefore, follow the manual installation below.
 
-**Manual installation instructions**
+### Manual installation instructions
 
 At some point, some configurations might require elevated prompt or some other interventions. Therefore, it's necessary to install everything from scratch manually. For each system (Windows, Linux or MacOS), open the terminal which has an access to `conda` and type the following;
 
@@ -112,8 +114,9 @@ At some point, some configurations might require elevated prompt or some other i
 
 These packages should be sufficient to run the programs. 
 
+---
 <!-- USAGE EXAMPLES -->
-## Usage
+# Usage
 To use the programs, inside the activated environment of conda type the following:
 
 | Name            | Definition                                                                                                                                                                                   |
