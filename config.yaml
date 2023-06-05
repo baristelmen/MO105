@@ -5,7 +5,7 @@ general: # Do not remove this. You can modify the rest
   base_location: "." # Base folder for exporting results
   base_folder_name: "test1"
   folders: ['raw', 'processed', 'figures']
-  overwrite: False # If set True, it will overwrite the folders given in base folder (delete and re-create)
+  overwrite: True # If set True, it will overwrite the folders given in base folder (delete and re-create)
   verbose_keys: False
 
 experiment: # Changeable name for your test
