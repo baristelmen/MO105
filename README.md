@@ -71,7 +71,7 @@ If the installation was successful, you should see the version of Conda installe
 
 Inside the repository, there is a file which is called `traction.yaml`. This file contains all the necessary libraries that is required to run scripts for both `control_machine` and `point_tracking`. Therefore, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following code for automatic installation of packages.
 
-`conda env create --file traction.yml`
+`conda env create --file requirements.txt`
 
 By default, this file will create an environment which is called `traction-tp`. To run these scripts, these environment has to be activated. To do that, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following 
 
@@ -88,7 +88,7 @@ If the installation was successful, you should see the version of Conda installe
 
 Inside the repository, there is a file which is called `traction.yaml`. This file contains all the necessary libraries that is required to run scripts for both `control_machine` and `point_tracking`. Therefore, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following code for automatic installation of packages.
 
-`conda env create --file traction.yml`
+`conda env create --file requirements.txt`
 
 By default, this file will create an environment which is called `traction-tp`. To run these scripts, these environment has to be activated. To do that, access `Anaconda Powershell Prompt` or `Anaconda Prompt` and type the following 
 
