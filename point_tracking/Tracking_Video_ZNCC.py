@@ -11,7 +11,7 @@ from function_Tracking_video import calibrate_fps
 if __name__ == '__main__':
     # Open video
     root = './'
-    video_file = 'essai_2.mp4'
+    video_file = '../examples/tracking/essai_2.mp4'
     calibrate_fps(video_file)
     video_file = 'output.mp4'
     video = cv2.VideoCapture(root+video_file)
