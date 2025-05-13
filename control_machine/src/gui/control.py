@@ -13,7 +13,7 @@ class ButtonPanel(tk.Frame):
                  machine_app = None, 
                  output_app = None,
                  port = None):
-        super().__init__(parent, width=width, height=height, bg="red", takefocus=True)
+        super().__init__(parent, width=width, height=height, bg="white", takefocus=True)
 
         self.shared_application = shared_application  # Save reference to DataTable
         self.shared_config = shared_config
@@ -33,19 +33,21 @@ class ButtonPanel(tk.Frame):
         large_font = ("Helvetica", 12, "bold")  # You can adjust the size
 
         # First child frame (Start, Stop)
-        control_frame = tk.Frame(self,  bg="black")
+        control_frame = tk.Frame(self,  bg="white")
         
         start_btn = tk.Button(control_frame, text="Start", font=large_font, width=5, command=self.start_auto_move)
         stop_btn = tk.Button(control_frame, text="Stop", font=large_font, width=5, command=self.stop_move)
         start_btn.pack(side="left", padx=5)
         stop_btn.pack(side="left", padx=5)
-        control_frame.grid(row=0, column=0, sticky="ew", padx=0, pady=(5, 5))
+
+        control_frame.grid(row=0, column=0, sticky="nesw", padx=0, pady=(5, 5))
+        control_frame.pack(side="left", padx=10, pady=5, fill="both", expand=True)
 
         # Second child frame (Up, Down)
-        direction_frame = tk.Frame(self,  bg="black")
+        direction_frame = tk.Frame(self,  bg="white")
 
         ## Creating up button
-        up_btn = tk.Button(direction_frame, text="↑", font=large_font, width=5)
+        up_btn = tk.Button(direction_frame, text="Up", font=large_font, width=5)
         up_btn.pack(side="left", padx=5)
 
         # Bind press and release events
@@ -55,7 +57,7 @@ class ButtonPanel(tk.Frame):
         up_btn.bind("<ButtonRelease-1>", lambda event: self.stop_move())
 
         ## Creating down button
-        down_btn = tk.Button(direction_frame, text="↓", font=large_font, width=5)
+        down_btn = tk.Button(direction_frame, text="Down", font=large_font, width=5)
         down_btn.pack(side="left", padx=5)
 
         # Bind press and release events
@@ -65,8 +67,8 @@ class ButtonPanel(tk.Frame):
         down_btn.bind("<ButtonRelease-1>", lambda event: self.stop_move())
 
         ## Final placing of the frame
-        direction_frame.grid(row=0, column=1, sticky="ew", padx=0, pady=(5, 5))
-
+        direction_frame.grid(row=0, column=1, sticky="nesw", padx=0, pady=(5, 5))
+        direction_frame.pack(side="right", padx=10, pady=5, fill="both", expand=True)
         ## Logging function to set up the logger
         self.logger = logging.getLogger("AppLogger")
         self.logger.info("Control frame is initialized")
@@ -217,6 +219,7 @@ class ButtonPanel(tk.Frame):
             raw = self.ar.read_until()
 
         self.moving = False
+        self.serial_dataframe["Adjusted force (N)"] = self.serial_dataframe["Force (N)"] - self.serial_dataframe["Force (N)"].iloc[0]
         self.serial_dataframe.to_csv(self.output_app.file_path.get(), index=False, sep = ";")
         self.output_app.file_path.set("")
 

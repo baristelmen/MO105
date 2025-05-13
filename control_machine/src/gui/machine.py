@@ -3,7 +3,7 @@ import logging
 
 class MachineConfig(tk.Frame):
     def __init__(self, parent, width: int, height: int):
-        super().__init__(parent, width=width, height=height, bg="red")
+        super().__init__(parent, width=width, height=height, bg="white")
 
         # Prevent frame from resizing to fit child widgets
         self.grid_propagate(False)
@@ -32,7 +32,7 @@ class MachineConfig(tk.Frame):
 
         row_num += 1
         # Load to Voltage label
-        lv_label = tk.Label(self, text="Load to Voltage:", bg="red", fg="white", font=("Helvetica", 12))
+        lv_label = tk.Label(self, text="Load to Voltage:", bg="white", fg="black", font=("Helvetica", 12))
         lv_label.grid(row=row_num, column=0, padx=10, pady=(5,5), sticky="nw")
 
         ## Read only entry with a default value
@@ -42,12 +42,12 @@ class MachineConfig(tk.Frame):
         self.lv_var.set("0")
 
         # Load to Voltage unit label
-        lvu_label = tk.Label(self, text="kg/V", bg="red", fg="white", font=("Helvetica", 12))
+        lvu_label = tk.Label(self, text="kg/V", bg="white", fg="black", font=("Helvetica", 12))
         lvu_label.grid(row = row_num, column=2, padx=10, pady=(5,5), sticky="ew")
 
         row_num += 1
         # Normal Voltage label
-        nv_label = tk.Label(self, text="Normal voltage:", bg="red", fg="white", font=("Helvetica", 12))
+        nv_label = tk.Label(self, text="Normal voltage:", bg="white", fg="black", font=("Helvetica", 12))
         nv_label.grid(row=row_num, column=0, padx=10, pady=(5,5), sticky="nw")
 
         # Normal Voltage entry
@@ -57,7 +57,7 @@ class MachineConfig(tk.Frame):
         self.nv_var.set("0")
 
         # Normal Voltage unit label
-        nvu_label = tk.Label(self, text="kg/V", bg="red", fg="white", font=("Helvetica", 12))
+        nvu_label = tk.Label(self, text="V", bg="white", fg="black", font=("Helvetica", 12))
         nvu_label.grid(row = row_num, column=2, padx=10, pady=(5,5), sticky="ew")
 
         self.logger = logging.getLogger("AppLogger")

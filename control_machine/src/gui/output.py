@@ -5,7 +5,7 @@ import logging
 
 class OutputConfig(tk.Frame):
     def __init__(self, parent, width: int, height: int):
-        super().__init__(parent, width=width, height=height, bg="red")
+        super().__init__(parent, width=width, height=height, bg="white")
 
         # Prevent frame from resizing to fit child widgets
         self.grid_propagate(False)
@@ -37,7 +37,7 @@ class OutputConfig(tk.Frame):
         self.file_path.set(os.path.join(os.getcwd(), "output.txt"))  # default file
 
         # Folder label
-        fl_label = tk.Label(self, text="Current folder:", bg="red", fg="white", font=("Helvetica", 12))
+        fl_label = tk.Label(self, text="Current folder:", bg="white", fg="black", font=("Helvetica", 12))
         fl_label.grid(row=row_num, column=0, padx=10, pady=(5,5), sticky="nw")
 
         # Folder entry

@@ -26,12 +26,12 @@ class Root(tk.Tk):
         self.id = 0
 
         start_width = 820
-        start_height = 650
+        start_height = 600
 
         self.geometry(f"{start_width}x{start_height}")
         self.title("Traction command and data read")
         self.resizable(False, False)
-        self.config(bg="red")
+        self.config(bg="grey")
 
         self.columnconfigure(0, weight=0)  # Fixed width
         self.columnconfigure(1, weight=1)  # Only used by log_app to stretch

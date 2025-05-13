@@ -4,7 +4,7 @@ import logging
 
 class DataTable(tk.Frame):
     def __init__(self, parent, width: int, height: int):
-        super().__init__(parent, width=width, height=height, bg="red")
+        super().__init__(parent, width=width, height=height, bg="white")
 
         self.grid_propagate(False)
 

@@ -3,7 +3,7 @@ import logging
 
 class ExperimentalConfig(tk.Frame):
     def __init__(self, parent, width: int, height: int):
-        super().__init__(parent, width=width, height=height, bg="red")
+        super().__init__(parent, width=width, height=height, bg="white")
 
         # Prevent frame from resizing to fit child widgets
         self.grid_propagate(False)
@@ -40,7 +40,7 @@ class ExperimentalConfig(tk.Frame):
         row_num += 1
 
         ## Move duration label
-        md_label = tk.Label(self, text="Move duration:", bg="red", fg="white", font=("Helvetica", 12))
+        md_label = tk.Label(self, text="Move duration:", bg="white", fg="black", font=("Helvetica", 12))
         md_label.grid(row=row_num, column=0, padx=10, pady=(5,5), sticky="nw")
 
         ## Move duration entry
@@ -49,12 +49,12 @@ class ExperimentalConfig(tk.Frame):
         self.md_entry.insert(0, "5")
 
         ## Unit label
-        mdu_label = tk.Label(self, text="s", bg="red", fg="white", font=("Helvetica", 12))
+        mdu_label = tk.Label(self, text="s", bg="white", fg="black", font=("Helvetica", 12))
         mdu_label.grid(row=row_num, column=2, padx=10, pady=(5,5), sticky="ew")
 
         row_num += 1
         # Frequency label
-        f_label = tk.Label(self, text="Frequency:", bg="red", fg="white", font=("Helvetica", 12))
+        f_label = tk.Label(self, text="Frequency:", bg="white", fg="black", font=("Helvetica", 12))
         f_label.grid(row=row_num, column=0, padx=10, pady=(5,5), sticky="nw")
 
         # Frequency entry
@@ -63,5 +63,5 @@ class ExperimentalConfig(tk.Frame):
         self.f_entry.insert(0, "5")
 
         # Frequency unit label
-        fu_label = tk.Label(self, text="Hz", bg="red", fg="white", font=("Helvetica", 12))
+        fu_label = tk.Label(self, text="Hz", bg="white", fg="black", font=("Helvetica", 12))
         fu_label.grid(row=row_num, column=2, padx=10, pady=(5,5), sticky="ew")
